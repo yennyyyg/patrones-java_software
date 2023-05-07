@@ -1,0 +1,121 @@
+import java.util.ArrayList;
+import java.util.List;
+
+// Clase que representa un personaje genérico
+public abstract class Personaje {
+    private String nombre;
+    private String imagen;
+    private int altura;
+    private int peso;
+    private int inteligencia;
+    private List<String> habilidades;
+
+    public Personaje(String nombre, String imagen, int altura, int peso, int inteligencia) {
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.altura = altura;
+        this.peso = peso;
+        this.inteligencia = inteligencia;
+        this.habilidades = new ArrayList<>();
+    }
+
+    // Métodos getters y setters para los atributos
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public int getInteligencia() {
+        return inteligencia;
+    }
+
+    public void setInteligencia(int inteligencia) {
+        this.inteligencia = inteligencia;
+    }
+
+    public List<String> getHabilidades() {
+        return habilidades;
+    }
+
+    public void setHabilidades(List<String> habilidades) {
+        this.habilidades = habilidades;
+    }
+
+    public void addHabilidad(String habilidad) {
+        this.habilidades.add(habilidad);
+    }
+
+    // Método abstracto que devuelve el tipo del personaje (Héroe, Villano, Príncipe o Monstruo)
+    public abstract String getTipo();
+}
+
+// Clase que representa un héroe
+public class Heroe extends Personaje {
+    public Heroe(String nombre, String imagen, int altura, int peso, int inteligencia) {
+        super(nombre, imagen, altura, peso, inteligencia);
+    }
+
+    // Implementación del método abstracto getTipo() de la clase Personaje
+    public String getTipo() {
+        return "Héroe";
+    }
+}
+
+// Clase que representa un villano
+public class Villano extends Personaje {
+    public Villano(String nombre, String imagen, int altura, int peso, int inteligencia) {
+        super(nombre, imagen, altura, peso, inteligencia);
+    }
+
+    // Implementación del método abstracto getTipo() de la clase Personaje
+    public String getTipo() {
+        return "Villano";
+    }
+}
+
+// Clase que representa un príncipe
+public class Principe extends Personaje {
+    public Principe(String nombre, String imagen, int altura, int peso, int inteligencia) {
+        super(nombre, imagen, altura, peso, inteligencia);
+    }
+
+    // Implementación del método abstracto getTipo() de la clase Personaje
+    public String getTipo() {
+        return "Príncipe";
+    }
+}
+
+// Clase que representa un monstruo
+public class Monstruo extends Personaje {
+    public Monstruo(String nombre, String imagen, int altura, int peso, int inteligencia) {
+        super(nombre, imagen, altura, peso, inteligencia);
+    }
+
+    // Implementación del método abstracto getTipo()
